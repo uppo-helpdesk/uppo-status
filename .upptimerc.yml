@@ -11,9 +11,9 @@ sites:
     url: https://api.uppo.io/api/v2/public/status
     expectedStatusCodes:
       - 200
-  - name: Self-Service Portal — uppo.portal.uppo.io
+  - name: Self-Service Portal — uppohelpdesk.portal.uppo.io
     slug: portal-uppo
-    url: https://uppo.portal.uppo.io
+    url: https://uppohelpdesk.portal.uppo.io
   - name: SSO Uppo — sso.uppo.io
     slug: sso
     url: https://sso.uppo.io/realms/Uppo
