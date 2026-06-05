@@ -24,9 +24,7 @@ sites:
       - 200
 
 status-website:
-  # DNS follow-up: point status.uppo.io (CNAME -> uppo-helpdesk.github.io) then
-  # swap `baseUrl` for `cname: status.uppo.io`.
-  baseUrl: /uppo-status
+  cname: status.uppo.io
   name: Uppo Status
   introTitle: "Stato dei servizi Uppo"
   introMessage: "Monitoraggio pubblico dei servizi principali Uppo (app, API, portale, SSO)."
