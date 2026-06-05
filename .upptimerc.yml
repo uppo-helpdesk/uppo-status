@@ -14,9 +14,6 @@ sites:
   - name: Portale Uppo
     slug: portal-uppo
     url: https://uppo.portal.uppo.io
-  - name: Portale Butali
-    slug: portal-butali
-    url: https://supporto.butali.it
   - name: SSO Uppo
     slug: sso
     url: https://sso.uppo.io/realms/Uppo
