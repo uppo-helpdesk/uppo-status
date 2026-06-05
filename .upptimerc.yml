@@ -11,7 +11,7 @@ sites:
     url: https://api.uppo.io/api/v2/public/status
     expectedStatusCodes:
       - 200
-  - name: Portale Self-Service — uppo.portal.uppo.io
+  - name: Self-Service Portal — uppo.portal.uppo.io
     slug: portal-uppo
     url: https://uppo.portal.uppo.io
   - name: SSO Uppo — sso.uppo.io
@@ -25,73 +25,10 @@ status-website:
   name: Uppo Status
   logoUrl: https://uppo.portal.uppo.io/uppo-logo.svg
   favicon: https://app.uppo.io/favicon.ico
-  introTitle: "**Stato dei servizi Uppo**"
-  introMessage: "Monitoraggio in tempo reale dei servizi Uppo — applicazione, API, portale self-service e accesso (SSO). Aggiornato automaticamente ogni 5 minuti."
+  introTitle: "**Uppo Service Status**"
+  introMessage: "Real-time monitoring of Uppo services — application, API, self-service portal and single sign-on (SSO). Updated automatically every 5 minutes."
   navbar:
-    - title: Stato
+    - title: Status
       href: /
     - title: Uppo
       href: https://uppo.io
-
-i18n:
-  activeIncidents: Incidenti attivi
-  allSystemsOperational: Tutti i sistemi sono operativi
-  incidentReport: "Report incidente #$NUMBER →"
-  activeIncidentSummary: "Aperto il $DATE con $POSTS messaggi"
-  incidentTitle: "Dettagli incidente $NUMBER"
-  incidentDetails: Dettagli incidente
-  incidentFixed: Risolto
-  incidentOngoing: In corso
-  incidentOpenedAt: Aperto il
-  incidentClosedAt: Chiuso il
-  incidentViewOnGitHub: Visualizza e segui su GitHub
-  incidentCommentSummary: "Pubblicato il $DATE da $AUTHOR"
-  incidentBack: "← Torna a tutti gli incidenti"
-  pastIncidents: Incidenti passati
-  pastIncidentsResolved: "Risolto in $MINUTES minuti con $POSTS messaggi"
-  liveStatus: Stato in tempo reale
-  overallUptime: "Uptime complessivo: $UPTIME"
-  overallUptimeTitle: Uptime complessivo
-  averageResponseTime: "Tempo di risposta medio: $TIMEms"
-  averageResponseTimeTitle: Risposta media
-  sevelDayResponseTime: Tempo di risposta (7 giorni)
-  responseTimeMs: Tempo di risposta (ms)
-  up: Operativo
-  down: Non disponibile
-  degraded: Degradato
-  ms: ms
-  loading: Caricamento
-  navGitHub: GitHub
-  footer: "Questa pagina è [open source]($REPO), basata su [Upptime](https://upptime.js.org)."
-  rateLimitExceededTitle: Limite di richieste superato
-  rateLimitExceededIntro: "Hai superato il numero di richieste consentite in un'ora: attendi prima di accedere di nuovo, oppure aggiungi un GitHub Personal Access Token per continuare."
-  rateLimitExceededWhatDoesErrorMean: Cosa significa questo errore?
-  rateLimitExceededErrorMeaning: "Questo sito usa le API di GitHub per i dati in tempo reale sullo stato dei servizi. Per impostazione predefinita GitHub consente 60 richieste all'ora per indirizzo IP, che hai esaurito."
-  rateLimitExceededErrorHowCanFix: Come posso risolvere?
-  rateLimitExceededErrorFix: "Puoi attendere un'altra ora e il limite del tuo IP verrà ripristinato. In alternativa aggiungi il tuo GitHub Personal Access Token, che offre 5.000 richieste aggiuntive all'ora."
-  rateLimitExceededGeneratePAT: Scopri come generare un Personal Access Token
-  rateLimitExceededHasSet: Hai impostato un personal access token.
-  rateLimitExceededRemoveToken: Rimuovi token
-  rateLimitExceededGitHubPAT: GitHub Personal Access Token
-  rateLimitExceededCopyPastePAT: Copia e incolla il tuo token
-  rateLimitExceededSaveToken: Salva token
-  errorTitle: Si è verificato un errore
-  errorIntro: Si è verificato un errore nel recupero degli ultimi dettagli sullo stato.
-  errorText: Puoi riprovare tra qualche istante.
-  errorHome: Vai alla homepage
-  pastScheduledMaintenance: Manutenzioni programmate passate
-  scheduledMaintenance: Manutenzione programmata
-  scheduledMaintenanceSummaryStarted: "Iniziata il $DATE per $DURATION minuti"
-  scheduledMaintenanceSummaryStarts: "Inizia il $DATE per $DURATION minuti"
-  startedAt: Iniziata il
-  startsAt: Inizia il
-  duration: Durata
-  durationMin: "$DURATION minuti"
-  incidentCompleted: Completato
-  incidentScheduled: Programmato
-  duration24H: 24h
-  duration7D: 7g
-  duration30D: 30g
-  duration1Y: 1a
-  durationAll: tutto
-  locale: it-IT
