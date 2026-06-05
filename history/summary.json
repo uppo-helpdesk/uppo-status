@@ -1,6 +1,6 @@
 [
   {
-    "name": "App Uppo",
+    "name": "App Uppo — app.uppo.io",
     "url": "https://app.uppo.io",
     "icon": "https://icons.duckduckgo.com/ip3/app.uppo.io.ico",
     "slug": "app",
@@ -18,7 +18,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "API Uppo",
+    "name": "API Uppo — api.uppo.io",
     "url": "https://api.uppo.io/api/v2/public/status",
     "icon": "https://icons.duckduckgo.com/ip3/api.uppo.io.ico",
     "slug": "api",
@@ -36,7 +36,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Portale Uppo",
+    "name": "Portale Self-Service — uppo.portal.uppo.io",
     "url": "https://uppo.portal.uppo.io",
     "icon": "https://icons.duckduckgo.com/ip3/uppo.portal.uppo.io.ico",
     "slug": "portal-uppo",
@@ -54,25 +54,7 @@
     "dailyMinutesDown": {}
   },
   {
-    "name": "Portale Butali",
-    "url": "https://supporto.butali.it",
-    "icon": "https://icons.duckduckgo.com/ip3/supporto.butali.it.ico",
-    "slug": "portal-butali",
-    "status": "up",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 692,
-    "timeDay": 692,
-    "timeWeek": 692,
-    "timeMonth": 692,
-    "timeYear": 692,
-    "dailyMinutesDown": {}
-  },
-  {
-    "name": "SSO Uppo",
+    "name": "SSO Uppo — sso.uppo.io",
     "url": "https://sso.uppo.io/realms/Uppo",
     "icon": "https://icons.duckduckgo.com/ip3/sso.uppo.io.ico",
     "slug": "sso",
