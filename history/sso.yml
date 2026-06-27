@@ -1,7 +1,7 @@
 url: https://sso.uppo.io/realms/Uppo
-status: up
-code: 200
-responseTime: 404
-lastUpdated: 2026-06-26T23:31:03.437Z
+status: down
+code: 0
+responseTime: 0
+lastUpdated: 2026-06-27T23:37:02.071Z
 startTime: 2026-06-05T10:31:16.716Z
 generator: Upptime <https://github.com/upptime/upptime>
