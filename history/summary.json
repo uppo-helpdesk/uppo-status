@@ -23,19 +23,17 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.uppo.io.ico",
     "slug": "api",
     "status": "up",
-    "uptime": "99.97%",
-    "uptimeDay": "99.29%",
-    "uptimeWeek": "99.90%",
-    "uptimeMonth": "99.97%",
-    "uptimeYear": "99.97%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 644,
     "timeDay": 784,
     "timeWeek": 656,
     "timeMonth": 644,
     "timeYear": 644,
-    "dailyMinutesDown": {
-      "2026-06-27": 10
-    }
+    "dailyMinutesDown": {}
   },
   {
     "name": "Self-Service Portal — uppohelpdesk.portal.uppo.io",
@@ -61,18 +59,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/sso.uppo.io.ico",
     "slug": "sso",
     "status": "up",
-    "uptime": "99.98%",
-    "uptimeDay": "99.63%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.98%",
-    "uptimeYear": "99.98%",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
     "time": 432,
     "timeDay": 369,
     "timeWeek": 441,
     "timeMonth": 432,
     "timeYear": 432,
-    "dailyMinutesDown": {
-      "2026-06-27": 5
-    }
+    "dailyMinutesDown": {}
   }
 ]
