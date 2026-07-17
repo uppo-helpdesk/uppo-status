@@ -22,18 +22,20 @@
     "url": "https://api.uppo.io/api/v2/public/status",
     "icon": "https://icons.duckduckgo.com/ip3/api.uppo.io.ico",
     "slug": "api",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
-    "time": 678,
-    "timeDay": 301,
-    "timeWeek": 587,
-    "timeMonth": 701,
-    "timeYear": 678,
-    "dailyMinutesDown": {}
+    "status": "up",
+    "uptime": "99.93%",
+    "uptimeDay": "96.95%",
+    "uptimeWeek": "99.56%",
+    "uptimeMonth": "99.90%",
+    "uptimeYear": "99.93%",
+    "time": 680,
+    "timeDay": 529,
+    "timeWeek": 608,
+    "timeMonth": 703,
+    "timeYear": 680,
+    "dailyMinutesDown": {
+      "2026-07-17": 44
+    }
   },
   {
     "name": "Self-Service Portal — uppohelpdesk.portal.uppo.io",
