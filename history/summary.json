@@ -22,20 +22,20 @@
     "url": "https://api.uppo.io/api/v2/public/status",
     "icon": "https://icons.duckduckgo.com/ip3/api.uppo.io.ico",
     "slug": "api",
-    "status": "down",
-    "uptime": "99.93%",
-    "uptimeDay": "99.66%",
-    "uptimeWeek": "99.95%",
-    "uptimeMonth": "99.89%",
-    "uptimeYear": "99.93%",
-    "time": 681,
-    "timeDay": 704,
-    "timeWeek": 679,
-    "timeMonth": 710,
-    "timeYear": 681,
+    "status": "up",
+    "uptime": "99.92%",
+    "uptimeDay": "98.90%",
+    "uptimeWeek": "99.84%",
+    "uptimeMonth": "99.86%",
+    "uptimeYear": "99.92%",
+    "time": 686,
+    "timeDay": 811,
+    "timeWeek": 709,
+    "timeMonth": 716,
+    "timeYear": 686,
     "dailyMinutesDown": {
       "2026-07-17": 44,
-      "2026-07-25": 5
+      "2026-07-25": 16
     }
   },
   {
@@ -61,17 +61,19 @@
     "url": "https://sso.uppo.io/realms/Uppo",
     "icon": "https://icons.duckduckgo.com/ip3/sso.uppo.io.ico",
     "slug": "sso",
-    "status": "down",
-    "uptime": "100.00%",
-    "uptimeDay": "100.00%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
-    "uptimeYear": "100.00%",
+    "status": "up",
+    "uptime": "99.98%",
+    "uptimeDay": "99.24%",
+    "uptimeWeek": "99.89%",
+    "uptimeMonth": "99.98%",
+    "uptimeYear": "99.98%",
     "time": 433,
-    "timeDay": 478,
-    "timeWeek": 429,
+    "timeDay": 455,
+    "timeWeek": 430,
     "timeMonth": 433,
     "timeYear": 433,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2026-07-25": 11
+    }
   }
 ]
