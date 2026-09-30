@@ -5,19 +5,34 @@ dentro AWS, dove nessuno l'avrebbe ritrovato.
 
 ## Perché non è più Upptime
 
-Upptime faceva due lavori con lo stesso strumento: controllare i servizi e pubblicare
-la pagina. Il controllo girava su GitHub Actions ogni 5 minuti — 288 esecuzioni al
-giorno — e questo repository è diventato **il primo consumatore di Actions
-dell'organizzazione: 73.722 minuti nel 2026**, più di `uppo-backend` (49.045).
+Upptime faceva due lavori con lo stesso strumento: controllare i servizi e pubblicare la
+pagina. Il controllo girava su GitHub Actions ogni 5 minuti — 288 esecuzioni al giorno.
 
-A settembre l'organizzazione ha superato il pacchetto incluso (52.421 minuti, per la
-prima volta a pagamento) e GitHub ha iniziato a bloccare le esecuzioni: **1.000
-consecutive** con esito `action_required`, compreso l'avvio manuale lanciato da un
-amministratore.
+**Cosa è successo, verificato:** da almeno il 21/09/2026 **ogni** esecuzione di `Uptime CI`
+è finita con esito `action_required` — mille consecutive, compreso un avvio **manuale**
+lanciato da un amministratore dell'organizzazione. Il workflow non è mai partito.
 
-Il monitor si è quindi spento da solo. E per nove giorni la pagina ha continuato a
-dichiarare tutti i servizi «🟩 Up» con tempo di risposta **0 ms** — lo zero è la firma
-del fatto che non stava misurando niente. Avrebbe mentito durante un guasto vero.
+Il monitor si è quindi spento da solo. E per **nove giorni** la pagina ha continuato a
+dichiarare tutti i servizi «🟩 Up» con tempo di risposta **0 ms** — lo zero è la firma del
+fatto che non stava misurando niente. Avrebbe mentito durante un guasto vero.
+
+**Perché GitHub blocchi quelle esecuzioni resta ignoto.** L'ipotesi non dimostrata è che i
+controlli automatici di GitHub reagiscano a un cron ogni 5 minuti su un repository
+pubblico.
+
+> ⚠️ Una prima versione di questo documento attribuiva il blocco al consumo di minuti,
+> dicendo che questo repository ne aveva bruciati 73.722. **Non è vero.** `uppo-status` è
+> **pubblico**, e sui repository pubblici i minuti Actions su runner standard sono gratuiti.
+> Quel numero nasceva dal sommare due totali mensili dell'intera organizzazione che la API
+> di fatturazione etichetta con un nome di repository arbitrario. Lo sforamento di settembre
+> (€ 12,42) è attribuito a `tfc`, che è privato.
+
+## Perché si è cambiato lo stesso
+
+Il motivo vero non è il costo: **un monitor che vive dentro GitHub Actions dipende da un
+meccanismo che non controlliamo e che non sappiamo diagnosticare**, e ha smesso di
+funzionare in silenzio per nove giorni senza che nessuno se ne accorgesse. Un guardiano che
+può essere spento da fuori, senza avviso e senza spiegazione, non è un guardiano.
 
 ## Come funziona adesso
 
@@ -77,10 +92,11 @@ dove siamo partiti.
 | 4 health check Route 53 | ~6 $/mese (0,50 $ ciascuno + 1 $ per HTTPS) |
 | Lambda, 8.640 esecuzioni/mese | free tier permanente |
 | S3 + CloudFront | trascurabile |
-| GitHub Actions | **0** (erano ~35.000 minuti/mese) |
+| GitHub Actions | **0** — nessun workflow attivo in questo repository |
 
 ## Il resto del repository
 
-I file di Upptime (`.upptimerc.yml`, `history/`, `api/`, i workflow) sono rimasti per lo
-**storico fino al 21/09/2026**. `Uptime CI` e `Response Time CI` sono disabilitati: se
-qualcuno li riattiva, il consumo riparte.
+Tutto ciò che era di Upptime sta in `archivio/upptime/`, workflow compresi. Sono stati
+**spostati**, non disabilitati: fuori da `.github/workflows/` GitHub non li vede e non può
+eseguirli. Disabilitarli non bastava — `update-template.yml` girava ogni notte e li
+rigenerava dalla configurazione.
