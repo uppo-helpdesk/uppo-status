@@ -20,6 +20,29 @@ sites:
     expectedStatusCodes:
       - 200
 
+# Cadenza dei controlli.
+#
+# Il predefinito di Upptime e' `*/5 * * * *`: 288 esecuzioni al giorno, ~8.600
+# al mese. Fra checkout, azione e commit ognuna costa piu' di un minuto, e nel
+# 2026 questo repository e' arrivato a consumare 73.722 minuti di Actions —
+# piu' di uppo-backend. A settembre l'organizzazione ha superato il pacchetto
+# incluso (52.421 minuti, per la prima volta a pagamento) e GitHub ha iniziato
+# a bloccare le esecuzioni: da almeno il 21/09 ogni avvio di Uptime CI torna
+# `action_required`, anche quello manuale.
+#
+# Il monitor si e' quindi spento da solo, e la pagina di stato ha continuato a
+# dichiarare tutti i servizi «Up» con tempo di risposta 0ms — cioe' avrebbe
+# mentito durante un guasto vero.
+#
+# Ogni 15 minuti: tre volte meno consumo (~11.500 minuti al mese), e per una
+# pagina di stato pubblica resta una finestra di rilevazione sensata.
+#
+# Questo blocco NON e' decorativo: `update-template` rigenera i workflow da
+# questo file ogni notte. Cambiare solo `.github/workflows/uptime.yml`
+# verrebbe annullato entro 24 ore.
+workflowSchedule:
+  uptime: "*/15 * * * *"
+
 status-website:
   cname: status.uppo.io
   name: Uppo Status
