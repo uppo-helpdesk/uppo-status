@@ -135,15 +135,12 @@ li.parziale .stato{{background:var(--parziale-b);color:var(--parziale)}}
 li.giu .stato{{background:var(--giu-b);color:var(--giu)}}
 #stantio{{display:none;background:var(--parziale-b);color:var(--parziale);border:1px solid var(--parziale);
 border-radius:10px;padding:13px 17px;margin-bottom:22px;font-size:14.5px}}
-footer{{margin-top:34px;color:var(--tenue);font-size:13px;line-height:1.7}}
 </style></head><body><div class="c">
 <div id="stantio"><b>Questa pagina non è aggiornata.</b> L'ultima misura risale a più di {SOGLIA_STANTIO_MIN} minuti fa,
 quindi lo stato qui sotto potrebbe non riflettere la situazione attuale.</div>
 <h1 class="{classe}">{titolo}</h1>
 <p class="quando">Ultima verifica: <span id="quando">{adesso.strftime('%d/%m/%Y %H:%M')} UTC</span></p>
 <ul>{''.join(voci)}</ul>
-<footer>Ogni servizio è controllato da 16 regioni del mondo, ogni 30 secondi.
-«Raggiungibile da N regioni» significa che il servizio risponde, ma non da ovunque.</footer>
 </div>
 <script>
 // La pagina si dichiara vecchia da sola: una pagina di stato ferma che dice
