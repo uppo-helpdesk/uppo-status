@@ -86,22 +86,31 @@ def _pagina(righe, adesso):
     if giu:
         titolo, classe = ("Disservizio in corso", "giu")
     elif parziale:
-        titolo, classe = ("Raggiungibilità ridotta", "parziale")
+        titolo, classe = ("Interruzione parziale", "parziale")
     else:
         titolo, classe = ("Tutti i servizi funzionano", "su")
 
     voci = []
     for r in righe:
         nome, dominio = ETICHETTE.get(r["id"], (r["id"], ""))
+        # Lo stato e' un GIUDIZIO, non una misura. «Raggiungibile da 14
+        # regioni su 16» obbliga chi legge a decidere da solo se e' grave,
+        # ed e' il motivo per cui serviva una nota a pie' di pagina che
+        # spiegasse l'etichetta. Il conteggio resta, ma sotto: li' dice
+        # quanto e' esteso il problema, che e' l'unica cosa azionabile.
+        dettaglio = dominio
         if r["ok"] == 0:
             stato, cls = "Non raggiungibile", "giu"
         elif r["ok"] < r["totale"]:
-            stato, cls = f"Raggiungibile da {r['ok']} regioni su {r['totale']}", "parziale"
+            stato, cls = "Interruzione parziale", "parziale"
+            mancanti = r["totale"] - r["ok"]
+            regioni = "regione" if mancanti == 1 else "regioni"
+            dettaglio = f"{dominio} · non risponde da {mancanti} {regioni} su {r['totale']}"
         else:
             stato, cls = "Funziona", "su"
         voci.append(
             f'<li class="{cls}"><div><b>{html.escape(nome)}</b>'
-            f'<span class="dom">{html.escape(dominio)}</span></div>'
+            f'<span class="dom">{html.escape(dettaglio)}</span></div>'
             f'<span class="stato">{html.escape(stato)}</span></li>'
         )
 
