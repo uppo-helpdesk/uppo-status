@@ -86,22 +86,31 @@ def _pagina(righe, adesso):
     if giu:
         titolo, classe = ("Disservizio in corso", "giu")
     elif parziale:
-        titolo, classe = ("Raggiungibilità ridotta", "parziale")
+        titolo, classe = ("Interruzione parziale", "parziale")
     else:
         titolo, classe = ("Tutti i servizi funzionano", "su")
 
     voci = []
     for r in righe:
         nome, dominio = ETICHETTE.get(r["id"], (r["id"], ""))
+        # Lo stato e' un GIUDIZIO, non una misura. «Raggiungibile da 14
+        # regioni su 16» obbliga chi legge a decidere da solo se e' grave,
+        # ed e' il motivo per cui serviva una nota a pie' di pagina che
+        # spiegasse l'etichetta. Il conteggio resta, ma sotto: li' dice
+        # quanto e' esteso il problema, che e' l'unica cosa azionabile.
+        dettaglio = dominio
         if r["ok"] == 0:
             stato, cls = "Non raggiungibile", "giu"
         elif r["ok"] < r["totale"]:
-            stato, cls = f"Raggiungibile da {r['ok']} regioni su {r['totale']}", "parziale"
+            stato, cls = "Interruzione parziale", "parziale"
+            mancanti = r["totale"] - r["ok"]
+            regioni = "regione" if mancanti == 1 else "regioni"
+            dettaglio = f"{dominio} · non risponde da {mancanti} {regioni} su {r['totale']}"
         else:
             stato, cls = "Funziona", "su"
         voci.append(
             f'<li class="{cls}"><div><b>{html.escape(nome)}</b>'
-            f'<span class="dom">{html.escape(dominio)}</span></div>'
+            f'<span class="dom">{html.escape(dettaglio)}</span></div>'
             f'<span class="stato">{html.escape(stato)}</span></li>'
         )
 
@@ -135,15 +144,12 @@ li.parziale .stato{{background:var(--parziale-b);color:var(--parziale)}}
 li.giu .stato{{background:var(--giu-b);color:var(--giu)}}
 #stantio{{display:none;background:var(--parziale-b);color:var(--parziale);border:1px solid var(--parziale);
 border-radius:10px;padding:13px 17px;margin-bottom:22px;font-size:14.5px}}
-footer{{margin-top:34px;color:var(--tenue);font-size:13px;line-height:1.7}}
 </style></head><body><div class="c">
 <div id="stantio"><b>Questa pagina non è aggiornata.</b> L'ultima misura risale a più di {SOGLIA_STANTIO_MIN} minuti fa,
 quindi lo stato qui sotto potrebbe non riflettere la situazione attuale.</div>
 <h1 class="{classe}">{titolo}</h1>
 <p class="quando">Ultima verifica: <span id="quando">{adesso.strftime('%d/%m/%Y %H:%M')} UTC</span></p>
 <ul>{''.join(voci)}</ul>
-<footer>Ogni servizio è controllato da 16 regioni del mondo, ogni 30 secondi.
-«Raggiungibile da N regioni» significa che il servizio risponde, ma non da ovunque.</footer>
 </div>
 <script>
 // La pagina si dichiara vecchia da sola: una pagina di stato ferma che dice
